@@ -1,0 +1,76 @@
+/* Contacto Form */
+.contacto-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contacto-container h1 {
+    font-size: 28px;
+    color: #711D1D;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contacto-container p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contacto-container input,
+.contacto-container select,
+.contacto-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contacto-container textarea {
+    resize: none;
+}
+
+.contacto-container input[type="radio"],
+.contacto-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.contacto-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    background-color: #F2BD07;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.contacto-container button:hover {
+    background-color: #d4a106;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.datos-enviados {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+}
+
+.datos-enviados strong {
+    color: #711D1D;
+}

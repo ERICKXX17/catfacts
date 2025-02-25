@@ -1,0 +1,81 @@
+<div class="contacto-container">
+    <h1>Información de tu gato favorito (Formularios Reactivos)</h1>
+    <form [formGroup]="formContacto" (ngSubmit)="onSubmit()">
+        <p>
+            Nombre de tu gato: <input type="text" class="form-control" formControlName="nombre">
+            @if (enviar && formContacto.get('nombre')?.errors?.['required']) {
+                <span class="error-message">Este campo es obligatorio</span>
+            }
+            @if (enviar && formContacto.get('nombre')?.errors?.['minlength']) {
+                <span class="error-message">El nombre debe tener al menos 20 caracteres</span>
+            }
+        </p>
+
+        <p>
+            ¿Donde podemos ver fotos de tu gato? <input type="text" class="form-control" formControlName="email">
+            @if (enviar && formContacto.get('email')?.errors?.['required']) {
+                <span class="error-message">Este campo es obligatorio</span>
+            }
+            @if (enviar && formContacto.get('email')?.errors?.['email']) {
+                <span class="error-message">Introduce un email válido</span>
+            }
+        </p>
+
+        <p>
+            ¿Es gato amigable?<br>
+            <input type="radio" formControlName="status" value="Si"> Sí
+            <input type="radio" formControlName="status" value="No"> No
+            @if (enviar && formContacto.get('status')?.errors?.['required']) {
+                <span class="error-message">Este campo es obligatorio</span>
+            }
+        </p>
+
+        <p>
+            Color:
+            <select class="form-control" formControlName="municipio">
+                <option value="Amealco">Blanco</option>
+                <option value="San Juan del Rio">Gris</option>
+                <option value="TX">Negro</option>
+                <option value="Naranja">Naranaja</option>
+            </select>
+            @if (enviar && formContacto.get('municipio')?.errors?.['required']) {
+                <span class="error-message">Este campo es obligatorio</span>
+            }
+        </p>
+
+        <p>
+            ¿Cuál es su anecdota favorita con tu gato?<br>
+            <textarea rows="5" class="form-control" formControlName="mensaje"></textarea>
+            @if (enviar && formContacto.get('mensaje')?.errors?.['required']) {
+                <span class="error-message">Este campo es obligatorio</span>
+            }
+            @if (enviar && formContacto.get('mensaje')?.errors?.['maxlength']) {
+                <span class="error-message">El mensaje no debe exceder 200 caracteres</span>
+            }
+        </p>
+
+        <p>
+            <input type="checkbox" formControlName="autorizacion">
+            ¿Autoriza compartir sus datos?
+        </p>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div class="datos-enviados">
+        @if (nombreCliente != '' && emailCliente != '' && mensajeCliente != '' && statusCliente != '' && municipioCliente != '') {
+            <p><strong>Datos enviados:</strong></p>
+            <p>Nombre: {{ nombreCliente }}</p>
+            <p>E-Mail: {{ emailCliente }}</p>
+            <p>Cliente Registrado: {{ statusCliente }}</p>
+            <p>Municipio: {{ municipioCliente }}</p>
+            @if (autorizacionCliente) {
+                <p>El cliente autoriza compartir sus datos personales</p>
+            }
+            @else {
+                <p>El cliente <strong>NO AUTORIZA</strong> compartir sus datos personales</p>
+            }
+            <p>Mensaje: {{ mensajeCliente }}</p>
+        }
+    </div>
+</div>

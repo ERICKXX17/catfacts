@@ -1,0 +1,52 @@
+/* Estilos generales para la barra de navegación */
+.navbar {
+    background-color: #222; /* Color de fondo oscuro */
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Estilos para el texto de la marca */
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #F2BD07 !important; /* Dorado */
+    text-transform: uppercase;
+}
+
+/* Estilos para la lista de navegación */
+.navbar-nav {
+    margin-left: auto; /* Alinea los elementos a la derecha */
+}
+
+/* Estilos para los enlaces del menú */
+.navbar-nav .nav-link {
+    color: #F2BD07 !important; /* Dorado */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto hover */
+.navbar-nav .nav-link:hover {
+    background-color: #711D1D; /* Rojo-café */
+    color: #fff !important; /* Blanco */
+    border-radius: 5px;
+}
+
+/* Estilos para los elementos activos */
+.navbar-nav .nav-item.active .nav-link {
+    background-color: #F2BD07; /* Dorado */
+    color: #222 !important; /* Texto oscuro */
+    border-radius: 5px;
+}
+
+/* Responsive: Asegura que el menú colapsado se vea bien en móviles */
+@media (max-width: 992px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+}
